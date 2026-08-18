@@ -1,0 +1,10 @@
+{
+  "algorithm": "lightgbm",
+  "format": "joblib_tfidf",
+  "metrics": {
+    "accuracy": 0.9978,
+    "precision": 0.9969,
+    "recall": 0.9991,
+    "f1": 0.998
+  }
+}

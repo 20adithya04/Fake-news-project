@@ -1,0 +1,6 @@
+# Install only when training/serving advanced models.
+lightgbm>=4.0.0
+tensorflow>=2.13.0
+transformers>=4.40.0
+datasets>=2.18.0
+torch>=2.0.0
