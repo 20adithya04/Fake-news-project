@@ -11,10 +11,12 @@ app = Flask(__name__)
 CORS(app)
 
 # Database setup
-DB_NAME = 'news.db'
-MODEL_PATH = '../ml_model/model.pkl'
-VECTORIZER_PATH = '../ml_model/vectorizer.pkl'
-ADVANCED_MODELS_DIR = '../ml_model/trained_models'
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+DB_NAME = os.path.join(BASE_DIR, 'backend', 'news.db')
+MODEL_PATH = os.path.join(BASE_DIR, 'ml_model', 'model.pkl')
+VECTORIZER_PATH = os.path.join(BASE_DIR, 'ml_model', 'vectorizer.pkl')
+ADVANCED_MODELS_DIR = os.path.join(BASE_DIR, 'ml_model', 'trained_models')
 # Set ACTIVE_MODEL to lightgbm, gru, lstm, cnn, bert, or roberta to serve an
 # advanced model. Leave unset to use the original Logistic Regression model.
 ACTIVE_MODEL = os.getenv('ACTIVE_MODEL', '').lower()
@@ -158,4 +160,4 @@ def get_history():
 
 if __name__ == '__main__':
     init_db()
-    app.run(debug=True, port=5000)
+    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))

@@ -6,9 +6,10 @@ import History from './History';
 import './index.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
   <React.StrictMode>
-    <Router>
+    <Router basename="/Fake-news-project">
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/history" element={<History />} />
