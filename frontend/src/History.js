@@ -19,7 +19,7 @@ function History() {
   const [history, setHistory] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const API_URL = 'http://localhost:5000/api';
+  const API_URL = 'https://fake-news-project-m1zx.onrender.com/api';
 
   useEffect(() => {
     fetchHistory();
@@ -96,7 +96,7 @@ function History() {
                     {groupedHistory[category].map((item) => (
                       <div key={item.id} className="prediction-card">
                         <div className="card-header">
-                          <span 
+                          <span
                             className="prediction-badge"
                             style={{ backgroundColor: getResultColor(item.prediction), color: 'white' }}
                           >

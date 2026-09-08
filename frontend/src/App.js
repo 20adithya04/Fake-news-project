@@ -7,7 +7,7 @@ function App() {
   const [newsText, setNewsText] = useState('');
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
-  const API_URL = 'http://localhost:5000/api';
+  const API_URL = 'https://fake-news-project-m1zx.onrender.com/api';
 
   const handlePredict = async (event) => {
     event.preventDefault();
