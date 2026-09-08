@@ -158,6 +158,8 @@ def get_history():
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
+# Initialize database when the application starts
+init_db()
+
 if __name__ == '__main__':
-    init_db()
     app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
