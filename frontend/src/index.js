@@ -9,7 +9,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <React.StrictMode>
-    <Router basename="/Fake-news-project">
+    <Router>
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/history" element={<History />} />
